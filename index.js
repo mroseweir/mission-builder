@@ -10,7 +10,6 @@ const launchsiteArray = [];
 const launchMessageArrLaunchsite = [];
 
 
-
 document.getElementById("launcherBtn").onclick = function () {
     launcherInfo.style.visibility = 'visible'
     axios
@@ -57,7 +56,6 @@ document.getElementById("payloadBtn").onclick = function () {
         })
 };
 
-
 document.getElementById("launchsiteBtn").onclick = function () {
     launchsiteInfo.style.visibility = 'visible'
     axios
@@ -84,10 +82,18 @@ document.getElementById("launchsiteBtn").onclick = function () {
 };
 
 document.getElementById("launchBtn").onclick = function () {
+
+    if (displayLauncher.textContent === "") {
+        alert('Failed to launch, no Launcher detected.')
+    } else if (displayPayload.textContent === ""){
+        alert('Failed to launch, no Payload detected.')
+    } else if (displayLaunchsite.textContent === ""){
+        alert('Failed to launch, no Launchsite detected.')
+    } else {
+
     for (let i = 0; i < prelaunchInfo.length; i++){
     prelaunchInfo[i].style.display = 'none'
 }
-
     launchMessage.style.display = 'block'
     launchMessage.innerHTML = `<h2>${launchMessageArrLauncher[0]} successfully launched ${launchMessageArrPayload[0]} from ${launchMessageArrLaunchsite[0]}! </h2>`
 
@@ -99,5 +105,9 @@ document.getElementById("launchBtn").onclick = function () {
         launchsiteInfo.style.visibility = 'hidden'
         payloadInfo.style.visibility = 'hidden'
         launcherInfo.style.visibility = 'hidden'
+        displayLaunchsite.innerHTML = ""
+        displayPayload.innerHTML = ""
+        displayLauncher.innerHTML = ""
     }, 5000)
+}
 };
