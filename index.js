@@ -1,11 +1,11 @@
 const prelaunchInfo = document.querySelectorAll(".prelaunchInfo");
 const displayLauncher = document.getElementById("launcherName");
+const displayPayload = document.getElementById("payloadName");
+const displayLaunchsite = document.getElementById("launchsiteName");
 const launcherArray = [];
 const launchMessageArrLauncher =[];
-const displayPayload = document.getElementById("payloadName");
 const payloadArray = [];
 const launchMessageArrPayload = [];
-const displayLaunchsite = document.getElementById("launchsiteName");
 const launchsiteArray = [];
 const launchMessageArrLaunchsite = [];
 
@@ -100,4 +100,4 @@ document.getElementById("launchBtn").onclick = function () {
         payloadInfo.style.visibility = 'hidden'
         launcherInfo.style.visibility = 'hidden'
     }, 5000)
-}
+};
