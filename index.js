@@ -1,16 +1,14 @@
-// const { default: axios } = require("axios")
-
-// const { type } = require("os");
-
-// const { default: axios } = require("axios");
-
-// const { default: axios } = require("axios");
-
-const prelaunchInfo = document.querySelectorAll(".prelaunchInfo")
+const prelaunchInfo = document.querySelectorAll(".prelaunchInfo");
 const displayLauncher = document.getElementById("launcherName");
 const launcherArray = [];
-
 const launchMessageArrLauncher =[];
+const displayPayload = document.getElementById("payloadName");
+const payloadArray = [];
+const launchMessageArrPayload = [];
+const displayLaunchsite = document.getElementById("launchsiteName");
+const launchsiteArray = [];
+const launchMessageArrLaunchsite = [];
+
 
 
 document.getElementById("launcherBtn").onclick = function () {
@@ -34,10 +32,6 @@ document.getElementById("launcherBtn").onclick = function () {
         });
 };
 
-const displayPayload = document.getElementById("payloadName");
-const payloadArray = [];
-const launchMessageArrPayload = [];
-
 document.getElementById("payloadBtn").onclick = function () {
     payloadInfo.style.visibility = 'visible'
     axios
@@ -59,15 +53,10 @@ document.getElementById("payloadBtn").onclick = function () {
             let randomPayloadNationality = payloadArray[randomIndex2].nationality
             let randomPayloadOrbit = payloadArray[randomIndex2].orbit
             displayPayload.innerHTML = `<h2>${randomPayloadName}</h2><br><h3>Type:</h3><br><h4>${randomPayloadType}</h4><br><h3>Origin:</h3><br><h4>${randomPayloadNationality}</h4><br><h3>Orbit:</h3><br><h4>${randomPayloadOrbit}</h4>`
-            // console.log(randomPayloadType)
             launchMessageArrPayload.unshift(randomPayloadName)
         })
-        console.log(launchMessageArrPayload)
 };
 
-const displayLaunchsite = document.getElementById("launchsiteName");
-const launchsiteArray = [];
-const launchMessageArrLaunchsite = [];
 
 document.getElementById("launchsiteBtn").onclick = function () {
     launchsiteInfo.style.visibility = 'visible'
@@ -111,8 +100,4 @@ document.getElementById("launchBtn").onclick = function () {
         payloadInfo.style.visibility = 'hidden'
         launcherInfo.style.visibility = 'hidden'
     }, 5000)
-
-    console.log(launchMessageArrLaunchsite)
-    console.log(launchMessageArrPayload)
-    console.log(launchMessageArrLauncher)
 }
