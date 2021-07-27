@@ -82,13 +82,27 @@ document.getElementById("launchsiteBtn").onclick = function () {
 };
 
 document.getElementById("launchBtn").onclick = function () {
-
     if (displayLauncher.textContent === "") {
-        alert('Failed to launch, no Launcher detected.')
+        Swal.fire({
+            title: 'Uh oh!',
+            text: 'Unable to launch, no Launcher detected!',
+            icon: 'warning',
+            confirmButtonText: 'Try Again'
+          });
     } else if (displayPayload.textContent === ""){
-        alert('Failed to launch, no Payload detected.')
+        Swal.fire({
+            title: 'Uh oh!',
+            text: 'Failed to launch, no Payload detected!',
+            icon: 'warning',
+            confirmButtonText: 'Try Again'
+          });
     } else if (displayLaunchsite.textContent === ""){
-        alert('Failed to launch, no Launchsite detected.')
+        Swal.fire({
+            title: 'Uh oh!',
+            text: 'Failed to launch, no Launchsite detected!',
+            icon: 'error',
+            confirmButtonText: 'Try Again'
+          });
     } else {
 
     for (let i = 0; i < prelaunchInfo.length; i++){
