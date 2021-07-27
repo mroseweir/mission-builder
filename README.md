@@ -8,7 +8,8 @@ When a user clicks on one of the 3 left hand buttons, the application
 filters through a few arrays gathering information to display about the
 selected category. When the user has all 3 items selected, they are able
 to click the launch button which will display a message containing the 
-information about the launch. An alert will pop up showing the user which
+information about the launch. If a user is missing one of the 3 items 
+required for a launch, an alert will pop up showing the user which
 item they are missing for a succesful launch. Once the container showing
 the information for the launch leaves the screen, the user is able to 
 begin building out another launch mission. 
